@@ -4,13 +4,13 @@ import player
 name = (str(input("Enter your name: ")))
 
 print("1. Knight")
-# TODO two more
+# TODO complete for other builds
 
 build = (int(input("Which build?: ")))
 
 if build == 1:
     player = player.Knight(name)
-# TODO two more
+# TODO complete for other builds
 
 screenWidth = 1500
 screenHeight = 1000
