@@ -1,3 +1,11 @@
-print("Hello")
+import weapons
 
-print("There1")
+stick = weapons.Sword()
+potato = weapons.Weapon(10, 10, 10)
+
+print(stick.durability)
+print(potato.durability)
+
+stick.use()
+
+print(stick.durability)
