@@ -1,11 +1,9 @@
 import weapons
 import chests
 
-stone = weapons.Sword()
-rock = weapons.Weapon(100, 101, 10)
+stone = weapons.Dagger()
+rock = weapons.Sword()
 
-print(stone.durability)
+stone.throw()
+print(stone.w_range)
 
-stone.use()
-
-print(stone.durability)
