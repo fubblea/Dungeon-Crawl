@@ -6,12 +6,10 @@ class Weapon:
         self.durability = durability
 
     def use(self):
-        self.durability = self.durability - 1
+        self.durability -= 1
 
 
 class Sword(Weapon):
 
     def __init__(self):
-        self.range = 10
-        self.damage = 20
-        self.durability = 100
+        Weapon.__init__(self, 10, 20, 100)

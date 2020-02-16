@@ -1,10 +1,11 @@
 import weapons
+import chests
 
-stick = weapons.Sword()
-potato = weapons.Weapon(100, 1, 1)
+stone = weapons.Sword()
+rock = weapons.Weapon(100, 101, 10)
 
-print(stick.durability)
+print(stone.durability)
 
-stick.use()
+stone.use()
 
-print(stick.durability)
+print(stone.durability)
