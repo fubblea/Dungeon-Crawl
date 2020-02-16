@@ -12,7 +12,7 @@ class Mobs:
 class Crook(Mobs):
 
     def __init__(self):
-        Mobs.__init__(30, 20, 50)
+        Mobs.__init__(self, 30, 20, 50)
 
     def punch(self):
         self.durability += 1
@@ -21,7 +21,7 @@ class Crook(Mobs):
 class Pirate(Mobs):
 
     def __init__(self):
-        Mobs.__init__(50, 40, 100)
+        Mobs.__init__(self, 50, 40, 100)
 
     def scream(self):
         self.damage += 1
@@ -30,7 +30,7 @@ class Pirate(Mobs):
 class Boss(Mobs):
 
     def __init__(self):
-        Mobs.__init__(100, 100, 1000)
+        Mobs.__init__(self, 100, 100, 1000)
 
     def mandem(self):
         self.m_range += 5
