@@ -6,7 +6,7 @@ class Mobs:
         self.durability = durability
 
     def jump(self):
-        self.range += 1
+        self.m_range += 1
 
 
 class Crook(Mobs):
@@ -14,7 +14,7 @@ class Crook(Mobs):
     def __init__(self):
         Mobs.__init__(30, 20, 50)
 
-    def jump(self):
+    def punch(self):
         self.durability += 1
 
 
@@ -33,6 +33,6 @@ class Boss(Mobs):
         Mobs.__init__(100, 100, 1000)
 
     def mandem(self):
-        self.range += 5
+        self.m_range += 5
         self.damage += 5
         self.durability += 5
