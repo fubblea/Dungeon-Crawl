@@ -1,3 +1,4 @@
+# TODO Add comments explaining whats happening
 class Player:
 
     def __init__(self, hp, dex):
