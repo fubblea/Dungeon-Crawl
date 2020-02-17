@@ -1,23 +1,30 @@
 import pygame
 import player
 
-name = (str(input("Enter your name: ")))
-
 print("1. Knight")
 # TODO complete for other builds
 
 build = (int(input("Which build?: ")))
 
 if build == 1:
-    player = player.Knight(name)
+    player = player.Knight()
 # TODO complete for other builds
 
+# This creates the game window
 screenWidth = 1500
 screenHeight = 1000
 win = pygame.display.set_mode((screenWidth, screenHeight))
-
 pygame.display.set_caption("Dungeon Crawl")
 
+
+def redraw_game_window():
+    # This draws the player and updates it's position
+    win.fill((0, 0, 0))
+    pygame.draw.rect(win, (255, 0, 0), (player.x_position, player.y_position, player.width, player.height))
+    pygame.display.update()
+
+
+# This is main game loop
 run = True
 while run:
     pygame.time.delay(100)
@@ -37,8 +44,6 @@ while run:
     if keys[pygame.K_DOWN]:
         player.y_position += player.dex
 
-    win.fill((0, 0, 0))
-    pygame.draw.rect(win, (255, 0, 0), (player.x_position, player.y_position, player.width, player.height))
-    pygame.display.update()
+    redraw_game_window()
 
 pygame.quit()

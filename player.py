@@ -1,9 +1,8 @@
 class Player:
 
-    def __init__(self, name, hp, dex):
-        self.name = name
+    def __init__(self, hp, dex):
         self.hp = hp
-        self.dex = dex
+        self.dex = dex  # Dexterity. How fast the player moves
 
         self.width = 10
         self.height = 20
@@ -13,7 +12,7 @@ class Player:
 
 class Knight(Player):
 
-    def __init__(self, name):
-        Player.__init__(self, name, 100, 20)
+    def __init__(self):
+        Player.__init__(self, 100, 20)
 
 # TODO Make two more builds
