@@ -23,8 +23,19 @@ class Knight(Player):
         Player.__init__(self, 100, 30)
 
         self.idle = pygame.image.load('data/sprites/player/Knight/Idle/idle1.png')
-        self.walk_right = [pygame.image.load('data/sprites/player/Knight/Walk/walk1.png'), pygame.image.load('data/sprites/player/Knight/Walk/walk2.png'), pygame.image.load('data/sprites/player/Knight/Walk/walk3.png'), pygame.image.load('data/sprites/player/Knight/Walk/walk4.png'), pygame.image.load('data/sprites/player/Knight/Walk/walk5.png'), pygame.image.load('data/sprites/player/Knight/Walk/walk6.png')]
-        self.walk_left = [pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk1.png'), True, False), pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk2.png'), True, False), pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk3.png'), True, False), pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk4.png'), True, False), pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk5.png'), True, False), pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk6.png'), True, False)]
+        self.walk_right = [pygame.image.load('data/sprites/player/Knight/Walk/walk1.png'),
+                           pygame.image.load('data/sprites/player/Knight/Walk/walk2.png'),
+                           pygame.image.load('data/sprites/player/Knight/Walk/walk3.png'),
+                           pygame.image.load('data/sprites/player/Knight/Walk/walk4.png'),
+                           pygame.image.load('data/sprites/player/Knight/Walk/walk5.png'),
+                           pygame.image.load('data/sprites/player/Knight/Walk/walk6.png')]
+        self.walk_left = [
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk1.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk2.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk3.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk4.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk5.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk6.png'), True, False)]
 
     def draw(self, win):
         if self.walk_count + 1 >= 18:
@@ -38,6 +49,7 @@ class Knight(Player):
             self.walk_count += 1
         else:
             win.blit(self.idle, (self.x_position, self.y_position))
+
 
 class Assassin(Player):
 

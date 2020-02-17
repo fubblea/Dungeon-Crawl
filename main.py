@@ -9,13 +9,13 @@ print('''1. Knight
 build = (int(input("Which build do you wish to chose?: ")))
 
 if build == 1:
-    player = player.Knight()
+    user = player.Knight()
 
 if build == 2:
-    player = player.Assassin()
+    user = player.Assassin()
 
 if build == 3:
-    player = player.Mage()
+    user = player.Mage()
 
 # This creates the game window
 screenWidth = 512
@@ -30,7 +30,7 @@ clock = pygame.time.Clock()
 def redraw_game_window():
     # This draws the player and updates it's position
     win.blit(bg, (0, 0))
-    player.draw(win)
+    user.draw(win)
     pygame.display.update()
 
 
@@ -44,31 +44,31 @@ while run:
             run = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT] and (player.x_position - player.dex) >= 0:
-        player.x_position -= player.dex
-        player.left = True
-        player.right = False
-        player.up = False
-        player.down = False
-    elif keys[pygame.K_RIGHT] and (player.x_position + player.dex) <= 1499:
-        player.x_position += player.dex
-        player.left = False
-        player.right = True
-        player.up = False
-        player.down = False
-    elif keys[pygame.K_UP] and (player.y_position - player.dex) >= 0:
-        player.y_position -= player.dex
+    if keys[pygame.K_LEFT] and (user.x_position - user.dex) >= 0:
+        user.x_position -= user.dex
+        user.left = True
+        user.right = False
+        user.up = False
+        user.down = False
+    elif keys[pygame.K_RIGHT] and (user.x_position + user.dex) <= 1499:
+        user.x_position += user.dex
+        user.left = False
+        user.right = True
+        user.up = False
+        user.down = False
+    elif keys[pygame.K_UP] and (user.y_position - user.dex) >= 0:
+        user.y_position -= user.dex
         # TODO Implement for up
-    elif keys[pygame.K_DOWN] and (player.y_position + player.dex) <= 799:
-        player.y_position += player.dex
+    elif keys[pygame.K_DOWN] and (user.y_position + user.dex) <= 799:
+        user.y_position += user.dex
         # TODO Implement for down
     else:
-        player.left = False
-        player.right = False
-        player.up = False
-        player.down = False
+        user.left = False
+        user.right = False
+        user.up = False
+        user.down = False
 
-        player.walk_count = 0
+        user.walk_count = 0
 
     redraw_game_window()
 
