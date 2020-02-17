@@ -1,18 +1,24 @@
 import pygame
 import player
 
-print("1. Knight")
-# TODO complete for other builds
+print('''1. Knight
+2. Assassin
+3. Mage''')
 
-build = (int(input("Which build?: ")))
+build = (int(input("Which build do you wish to chose?: ")))
 
 if build == 1:
     player = player.Knight()
-# TODO complete for other builds
+
+if build == 2:
+    player = player.Assassin()
+
+if build == 3:
+    player = player.Mage()
 
 # This creates the game window
 screenWidth = 1500
-screenHeight = 1000
+screenHeight = 800
 win = pygame.display.set_mode((screenWidth, screenHeight))
 pygame.display.set_caption("Dungeon Crawl")
 
@@ -35,14 +41,15 @@ while run:
 
     # TODO Don't let the player go off the screen
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT]:
+    if keys[pygame.K_LEFT] and (player.x_position - player.dex) >= 0:
         player.x_position -= player.dex
-    if keys[pygame.K_RIGHT]:
+    if keys[pygame.K_RIGHT] and (player.x_position + player.dex) <= 1499:
         player.x_position += player.dex
-    if keys[pygame.K_UP]:
+    if keys[pygame.K_UP] and (player.y_position - player.dex) >= 0:
         player.y_position -= player.dex
-    if keys[pygame.K_DOWN]:
+    if keys[pygame.K_DOWN] and (player.y_position + player.dex) <= 799:
         player.y_position += player.dex
+
 
     redraw_game_window()
 
