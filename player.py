@@ -15,4 +15,4 @@ class Knight(Player):
     def __init__(self):
         Player.__init__(self, 100, 20)
 
-# TODO Make two more builds
+# TODO Make two more builds: Assassin, Mage
