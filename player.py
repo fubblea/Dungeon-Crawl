@@ -44,8 +44,12 @@ class Assassin(Player):
     def __init__(self):
         Player.__init__(self, 75, 50)
 
+    # TODO Animate
+
 
 class Mage(Player):
 
     def __init__(self):
         Player.__init__(self, 130, 15)
+
+    # TODO Animate

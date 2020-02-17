@@ -1,3 +1,4 @@
+# TODO Add comments explaining whats happening
 import pygame
 import player
 
@@ -45,25 +46,27 @@ while run:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and (player.x_position - player.dex) >= 0:
         player.x_position -= player.dex
-        player.walk_left = True
-        player.walk_right = False
-        player.walk_up = False
-        player.walk_down = False
+        player.left = True
+        player.right = False
+        player.up = False
+        player.down = False
     elif keys[pygame.K_RIGHT] and (player.x_position + player.dex) <= 1499:
         player.x_position += player.dex
-        player.walk_left = False
-        player.walk_right = True
-        player.walk_up = False
-        player.walk_down = False
+        player.left = False
+        player.right = True
+        player.up = False
+        player.down = False
     elif keys[pygame.K_UP] and (player.y_position - player.dex) >= 0:
         player.y_position -= player.dex
+        # TODO Implement for up
     elif keys[pygame.K_DOWN] and (player.y_position + player.dex) <= 799:
         player.y_position += player.dex
+        # TODO Implement for down
     else:
-        player.walk_left = False
-        player.walk_right = False
-        player.walk_up = False
-        player.walk_down = False
+        player.left = False
+        player.right = False
+        player.up = False
+        player.down = False
 
         player.walk_count = 0
 
