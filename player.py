@@ -1,4 +1,5 @@
 # TODO Add comments explaining whats happening
+# TODO Finish methods for Knight and Rogue
 class Player:
 
     def __init__(self, hp, dex):
@@ -44,7 +45,7 @@ class Knight(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb1.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb2.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb3.png'), True, False),
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb4.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb4.png'), True, False)]
 
     def draw(self, win):
         if self.walk_count + 1 >= 18:
@@ -63,9 +64,10 @@ class Knight(Player):
 class Assassin(Player):
 
     def __init__(self):
+        import pygame
         Player.__init__(self, 75, 50)
 
-        self.idle = pygame.image.load('data/sprites/player/Knight/Idle/idle1.png')
+        self.idle = pygame.image.load('data/sprites/player/Rogue/Idle/idle1.png')
         self.walk_right = [pygame.image.load('data/sprites/player/Rogue/Walk/walk1.png'),
                            pygame.image.load('data/sprites/player/Rogue/Walk/walk2.png'),
                            pygame.image.load('data/sprites/player/Rogue/Walk/walk3.png'),
@@ -84,7 +86,7 @@ class Assassin(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb1.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb2.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb3.png'), True, False),
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb4.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb4.png'), True, False)]
 
     def draw(self, win):
         if self.walk_count + 1 >= 18:
@@ -100,14 +102,13 @@ class Assassin(Player):
             win.blit(self.idle, (self.x_position, self.y_position))
 
 
-
-
 class Mage(Player):
 
     def __init__(self):
+        import pygame
         Player.__init__(self, 130, 15)
 
-        self.idle = pygame.image.load('data/sprites/player/Knight/Idle/idle1.png')
+        self.idle = pygame.image.load('data/sprites/player/Mage/Idle/idle1.png')
         self.walk_right = [pygame.image.load('data/sprites/player/Mage/Walk/walk1.png'),
                            pygame.image.load('data/sprites/player/Mage/Walk/walk2.png'),
                            pygame.image.load('data/sprites/player/Mage/Walk/walk3.png'),
@@ -126,7 +127,7 @@ class Mage(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Mage/Climb/climb1.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Mage/Climb/climb2.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Mage/Climb/climb3.png'), True, False),
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Mage/Climb/climb4.png'), True, False),
+            pygame.transform.flip(pygame.image.load('data/sprites/player/Mage/Climb/climb4.png'), True, False)]
 
     def draw(self, win):
         if self.walk_count + 1 >= 18:
@@ -137,6 +138,9 @@ class Mage(Player):
             self.walk_count += 1
         elif self.right:
             win.blit(self.walk_right[self.walk_count // 3], (self.x_position, self.y_position))
+            self.walk_count += 1
+        elif self.up:
+            win.blit(self.walk_up[self.walk_count // 5], (self.x_position, self.y_position))
             self.walk_count += 1
         else:
             win.blit(self.idle, (self.x_position, self.y_position))
