@@ -1,4 +1,3 @@
-# TODO Add comments explaining whats happening
 import pygame
 import player
 

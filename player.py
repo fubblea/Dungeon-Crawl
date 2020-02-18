@@ -40,6 +40,8 @@ class Knight(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk5.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk6.png'), True, False)]
 
+        # TODO Do Up
+
     def draw(self, win):
         if self.walk_count + 1 >= 18:
             self.walk_count = 0
