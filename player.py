@@ -57,6 +57,8 @@ class Knight(Player):
         elif self.right:
             win.blit(self.walk_right[self.walk_count // 3], (self.x_position, self.y_position))
             self.walk_count += 1
+        elif self.right:
+            win.blit(self.walk_up[self.walk_count // 5], (self.x_position, self.y_position))
         else:
             win.blit(self.idle, (self.x_position, self.y_position))
 
@@ -98,6 +100,8 @@ class Assassin(Player):
         elif self.right:
             win.blit(self.walk_right[self.walk_count // 3], (self.x_position, self.y_position))
             self.walk_count += 1
+        elif self.right:
+            win.blit(self.walk_up[self.walk_count // 5], (self.x_position, self.y_position))
         else:
             win.blit(self.idle, (self.x_position, self.y_position))
 
