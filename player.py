@@ -1,5 +1,3 @@
-# TODO Add comments explaining whats happening
-# TODO Finish methods for Knight and Rogue
 class Player:
 
     def __init__(self, hp, dex):
