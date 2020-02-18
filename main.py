@@ -43,25 +43,29 @@ while run:
             run = False
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT] and (user.x_position - user.dex) >= 0:  # If the user presses the left arrow key, then the player moves left
+    if keys[pygame.K_LEFT] and (
+            user.x_position - user.dex) >= 0:  # If the user presses the left arrow key, then the player moves left
         user.x_position -= user.dex
         user.left = True
         user.right = False
         user.up = False
         user.down = False
-    elif keys[pygame.K_RIGHT] and (user.x_position + user.dex) <= 1499:  # If the user presses the right arrow key, then the player moves right
+    elif keys[pygame.K_RIGHT] and (
+            user.x_position + user.dex) <= 1499:  # If the user presses the right arrow key, then the player moves right
         user.x_position += user.dex
         user.left = False
         user.right = True
         user.up = False
         user.down = False
-    elif keys[pygame.K_UP] and (user.y_position - user.dex) >= 0:  # If the user presses the up arrow key, then the player moves up
+    elif keys[pygame.K_UP] and (
+            user.y_position - user.dex) >= 0:  # If the user presses the up arrow key, then the player moves up
         user.y_position -= user.dex
         user.left = False
         user.right = False
         user.up = True
         user.down = False
-    elif keys[pygame.K_DOWN] and (user.y_position + user.dex) <= 799:  # If the user presses the down arrow key, then the player moves down
+    elif keys[pygame.K_DOWN] and (
+            user.y_position + user.dex) <= 799:  # If the user presses the down arrow key, then the player moves down
         user.y_position += user.dex
         user.left = False
         user.right = False
