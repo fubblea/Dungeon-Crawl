@@ -1,6 +1,5 @@
 # TODO Animate the attack for knight assassin
 
-
 class Player:
 
     def __init__(self, hp, dex):
@@ -69,12 +68,17 @@ class Knight(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk5.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Walk/walk6.png'), True, False)]
 
-        # TODO Un-flip this
         self.walk_up = [
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb2.png'), True, False),
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb2.png'), True, False),
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb3.png'), True, False),
-            pygame.transform.flip(pygame.image.load('data/sprites/player/Knight/Climb/climb4.png'), True, False)]
+            (pygame.image.load('data/sprites/player/Knight/Climb/climb2.png'), True, False),
+            (pygame.image.load('data/sprites/player/Knight/Climb/climb2.png'), True, False),
+            (pygame.image.load('data/sprites/player/Knight/Climb/climb3.png'), True, False),
+            (pygame.image.load('data/sprites/player/Knight/Climb/climb4.png'), True, False)]
+
+        self.attack = [
+            (pygame.image.load('data/sprites/player/Knight/Attack/attack0.png'), True, False),
+            (pygame.image.load('data/sprites/player/Knight/Attack/attack1.png'), True, False),
+            (pygame.image.load('data/sprites/player/Knight/Attack/attack2.png'), True, False),
+            (pygame.image.load('data/sprites/player/Knight/Attack/attack3.png'), True, False), ]
 
 
 class Assassin(Player):
@@ -103,6 +107,12 @@ class Assassin(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb2.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb3.png'), True, False),
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb4.png'), True, False)]
+
+        self.attack = [
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack1.png', True, False),
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack2.png', True, False),
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack3.png', True, False),
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack4.png', True, False)]
 
 
 class Mage(Player):

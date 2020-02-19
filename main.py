@@ -1,7 +1,6 @@
 # TODO Explain how I did the facing thing
-# TODO Code attack
+# idk how you did the facing thing pls help
 import pygame
-
 import player
 
 print('''1. Knight
@@ -47,6 +46,12 @@ while run:
 
     keys = pygame.key.get_pressed()
     # noinspection PyUnboundLocalVariable
+    if keys[pygame.key_m]:
+        user.left = False
+        user.right = False
+        user.up = False
+        user.down = False
+        user.standing = True
     if keys[pygame.K_LEFT] and (
             user.x_position - user.dex) >= 0:  # If the user presses the left arrow key, then the player moves left
         user.x_position -= user.dex
