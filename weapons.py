@@ -1,4 +1,4 @@
-class Weapon:
+class Melee:
 
     def __init__(self, w_range, damage, durability, speed):
         self.w_range = w_range
@@ -10,16 +10,28 @@ class Weapon:
         self.durability -= 1
 
 
-class Sword(Weapon):
+class Sword(Melee):
 
     def __init__(self):
-        Weapon.__init__(self, 10, 20, 100, 5)
+        Melee.__init__(self, 10, 20, 100, 5)
 
 
-class Dagger(Weapon):
+class Dagger(Melee):
 
     def __init__(self):
-        Weapon.__init__(self, 5, 20, 100, 10)
+        Melee.__init__(self, 5, 20, 100, 10)
 
-    def throw(self):
-        self.w_range = 50
+
+class Projectile:
+    def __init__(self, x, y, radius, color, facing):
+        self.x = x
+        self.y = y
+        self.radius = radius
+        self.color = color
+        self.facing = facing
+        self.vel = 8 * facing
+
+    def draw(self, win):
+        import pygame
+
+        pygame.draw.circle(win, self.color, (self.x, self.y), self.radius)

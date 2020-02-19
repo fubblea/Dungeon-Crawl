@@ -1,4 +1,7 @@
+# TODO Explain how I did the facing thing
+# TODO Code attack
 import pygame
+
 import player
 
 print('''1. Knight
@@ -43,6 +46,7 @@ while run:
             run = False
 
     keys = pygame.key.get_pressed()
+    # noinspection PyUnboundLocalVariable
     if keys[pygame.K_LEFT] and (
             user.x_position - user.dex) >= 0:  # If the user presses the left arrow key, then the player moves left
         user.x_position -= user.dex
@@ -50,13 +54,15 @@ while run:
         user.right = False
         user.up = False
         user.down = False
+        user.standing = False
     elif keys[pygame.K_RIGHT] and (
-            user.x_position + user.dex) <= 1499:  # If the user presses the right arrow key, then the player moves right
+            user.x_position + user.dex) <= screenWidth:  # If the user presses the right arrow key, then the player moves right
         user.x_position += user.dex
         user.left = False
         user.right = True
         user.up = False
         user.down = False
+        user.standing = False
     elif keys[pygame.K_UP] and (
             user.y_position - user.dex) >= 0:  # If the user presses the up arrow key, then the player moves up
         user.y_position -= user.dex
@@ -64,19 +70,17 @@ while run:
         user.right = False
         user.up = True
         user.down = False
+        user.standing = False
     elif keys[pygame.K_DOWN] and (
-            user.y_position + user.dex) <= 799:  # If the user presses the down arrow key, then the player moves down
+            user.y_position + user.dex) <= screenHeight:  # If the user presses the down arrow key, then the player moves down
         user.y_position += user.dex
         user.left = False
         user.right = False
         user.up = False
         user.down = True
+        user.standing = False
     else:
-        user.left = False
-        user.right = False
-        user.up = False
-        user.down = False
-
+        user.standing = True
         user.walk_count = 0
 
     redraw_game_window()
