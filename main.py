@@ -46,7 +46,7 @@ while run:
 
     keys = pygame.key.get_pressed()
     # noinspection PyUnboundLocalVariable
-    if keys[pygame.key_m]:
+    if keys[pygame.K_m]:
         user.left = False
         user.right = False
         user.up = False

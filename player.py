@@ -1,4 +1,4 @@
-# TODO Animate the attack for knight assassin
+
 
 class Player:
 
@@ -109,10 +109,10 @@ class Assassin(Player):
             pygame.transform.flip(pygame.image.load('data/sprites/player/Rogue/Climb/climb4.png'), True, False)]
 
         self.attack = [
-            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack1.png', True, False),
-            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack2.png', True, False),
-            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack3.png', True, False),
-            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack4.png', True, False)]
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack1.png'), True, False),
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack2.png'), True, False),
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack3.png'), True, False),
+            (pygame.image.load('data/sprites/player/Rogue/Attack/Attack4.png'), True, False)]
 
 
 class Mage(Player):
